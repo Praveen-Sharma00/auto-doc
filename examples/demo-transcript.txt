@@ -1,0 +1,51 @@
+$ git clone --depth 1 https://github.com/tj/commander.js /tmp/commander
+Cloning into '/tmp/commander'...
+remote: Enumerating objects: 280, done.
+Receiving objects: 100% (280/280), 656.31 KiB | 6.55 MiB/s, done.
+
+$ export ANTHROPIC_API_KEY=sk-ant-...
+
+$ onboard /tmp/commander
+onboard: scanning /tmp/commander
+onboard: bundled 19 files, 211842 bytes (3 skipped)
+turn 1: calling claude-sonnet-4-6 (0/6 sections done)
+  tool: list_dir(path=.)
+  tool: read_file(path=Readme.md)
+  tool: list_dir(path=lib)
+turn 2: calling claude-sonnet-4-6 (0/6 sections done)
+  tool: read_file(path=lib/command.js)
+  tool: read_file(path=lib/option.js)
+turn 3: calling claude-sonnet-4-6 (0/6 sections done)
+  tool: read_file(path=lib/argument.js)
+  tool: read_file(path=lib/help.js)
+  tool: read_file(path=lib/error.js)
+turn 4: calling claude-sonnet-4-6 (0/6 sections done)
+  tool: read_file(path=CONTRIBUTING.md)
+  tool: read_file(path=jest.config.js)
+  tool: list_dir(path=tests)
+turn 5: calling claude-sonnet-4-6 (0/6 sections done)
+  tool: grep(pattern=_dispatchSubcommand|_executeSubCommand)
+turn 6: calling claude-sonnet-4-6 (0/6 sections done)
+  tool: submit_section(key=how-to-run, body=`commander` is a library, not an applic...)
+turn 7: calling claude-sonnet-4-6 (1/6 sections done)
+  tool: submit_section(key=mental-model, body=`commander` parses `process.argv` and ...)
+turn 8: calling claude-sonnet-4-6 (2/6 sections done)
+  tool: submit_section(key=modules, body=Everything ships from the repo root and...)
+turn 9: calling claude-sonnet-4-6 (3/6 sections done)
+  tool: submit_section(key=flows, body=### 1. From `program.parse(argv)` to yo...)
+turn 10: calling claude-sonnet-4-6 (4/6 sections done)
+  tool: submit_section(key=where-to-start, body=A good first session, roughly i...)
+turn 11: calling claude-sonnet-4-6 (5/6 sections done)
+  tool: submit_section(key=gotchas, body=- **There are two entry points.** `inde...)
+all required sections submitted
+onboard: wrote /tmp/commander/ONBOARDING.md (6/6 sections, 11 turns)
+
+$ wc -l /tmp/commander/ONBOARDING.md
+     112 /tmp/commander/ONBOARDING.md
+
+$ head -3 /tmp/commander/ONBOARDING.md
+# Onboarding: commander
+
+> the complete solution for node.js command-line programs
+
+(See examples/commander/ONBOARDING.md in this repo for the full output.)
